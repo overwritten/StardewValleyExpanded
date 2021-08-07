@@ -1,0 +1,191 @@
+{ "Changes": [
+		{   
+			"LogName": "Sophia Spouse Strings - Theater",
+			"Action": "EditData",
+			"Target": "Strings/Characters",
+			"Entries": { 
+				"MovieInvite_Spouse_Sophia": "Oooh! A movie? Yay!$9#$b#I'll meet you there okay?$1#$e#I'm going to get cotton candy!$1",
+			}
+		},
+		{
+			"LogName": "Sophia's Engagement Dialogue",
+			"Action": "EditData",
+			"Target": "Data/EngagementDialogue",
+			"Entries": {
+				"Sophia0": "This is the start of something wonderful.$4",
+				"Sophia1": "Um. Hey. I'll see you later, okay?$4"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Strings/StringsFromCSFiles",
+			"Entries": { "NPC.cs.4406": "I just feel like sleeping today.$0" }
+		},
+		{
+			"Action": "EditData",
+			"Target": "strings/StringsFromCSFiles",
+			"Entries": {
+				"Utility.cs.5367": "When @ first arrived in Pelican Town, no one knew if he'd fit in with our community...#$b#But from this day forward, @ is going to be as much a part of this town as any of us!$h#$b#It is my great honor on this day {0} of {1}, to unite @ and Sophia in the bonds of marriage.",
+				"Utility.cs.5369": "When @ first arrived in Pelican Town, no one knew if she'd fit in with our community...#$b#But from this day forward, @ is going to be as much a part of this town as any of us!$h#$b#It is my great honor on this day {0} of {1}, to unite @ and Sophia in the bonds of marriage.",
+				"Utility.cs.5371": "@... Sophia... #$b# As the mayor of Pelican Town, and regional bearer of the matrimonial seal, I now pronounce you husband and wife!$h",
+				"Utility.cs.5377": "@... Sophia... #$b# As the mayor of Pelican Town, and regional bearer of the matrimonial seal, I now pronounce you wife and..., well, wife!$h", },
+			"When": { "Relationship:Sophia": "Engaged" },
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/ConcessionTastes",
+			"Entries": {
+			"Sophia": {
+			"Name": "Sophia",
+			"LovedTags": [
+			  "Rock Candy", "Candy", "Cotton Candy"
+			],
+			"LikedTags": [
+			  "Sweet", "Gourmet"
+			],
+			"DislikedTags": [
+			  "Healthy", "Salty"
+			]
+		   },
+		 },
+		},
+
+		{
+		  "Action": "EditData",
+		  "Target": "Data/MoviesReactions",
+		  "Entries": {
+		  "Sophia": {
+			"NPCName": "Sophia",
+			"Reactions": [
+			  {
+				"Tag": "action",
+				"Response": "love",
+				"Whitelist": [],
+				"SpecialResponses": null,
+				"ID": "reaction_0"
+			  },
+			  {
+				"Tag": "horror",
+				"Response": "dislike",
+				"Whitelist": [],
+				"SpecialResponses": null,
+				"ID": "reaction_1"
+			  },
+			  {
+				"Tag": "summer_movie_0",
+				"Response": "like",
+				"Whitelist": [],
+				"SpecialResponses": {
+				  "BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "I can't believe they made a Prairie King movie... I hope it's good!"
+				  },
+				  "DuringMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "That's my cosplay!$9"
+				  },
+				  "AfterMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "The movie was so so great! Thanks for taking me!$1"
+				  }
+				},
+				"ID": "reaction_2"
+			  },
+			  {
+				"Tag": "spring_movie_1",
+				"Response": "like",
+				"Whitelist": [],
+				"SpecialResponses": {
+				  "BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "I hope this movie is good! I think there's a cute character in it!$1"
+				  },
+				  "DuringMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "Ohh! That's interesting!$1"
+				  },
+				  "AfterMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "Raccoons are so so adorable!$1"
+				  }
+				},
+				"ID": "reaction_3"
+			  },
+			  {
+				"Tag": "love",
+				"Response": "like",
+				"Whitelist": [],
+				"SpecialResponses": {
+				  "BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "Let's go get the good seats, @!$1"
+				  },
+				  "DuringMovie": {
+					"ResponsePoint": null,
+					"Script": "/shake Sophia 3000/pause 500/message \"Sophia is giggling!\"",
+					"Text": "Hehe!$9"
+				  },
+				  "AfterMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "What part was your favorite?$1"
+				  }
+				},
+				"ID": "reaction_4"
+			  },
+			  {
+				"Tag": "like",
+				"Response": "like",
+				"Whitelist": [],
+				"SpecialResponses": {
+				  "BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "Hey, you! Thanks for inviting me, I love going to the movies.$1"
+				  },
+				  "DuringMovie": null,
+				  "AfterMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "There were some silly parts, but I liked it.$9"
+				  }
+				},
+				"ID": "reaction_5"
+			  },
+			  {
+				"Tag": "dislike",
+				"Response": "like",
+				"Whitelist": [],
+				"SpecialResponses": {
+				  "BeforeMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "I-I don't know about this one. I'm just here for the snacks.$1"
+				  },
+				  "DuringMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "Mmm. A little boring...$2"
+				  },
+				  "AfterMovie": {
+					"ResponsePoint": null,
+					"Script": "",
+					"Text": "I think I'd rate that a 5 out of 10.$0"
+				  }
+				},
+				"ID": "reaction_6"
+			   }
+			 ]
+			}
+		  }
+		},
+		
+	]
+}

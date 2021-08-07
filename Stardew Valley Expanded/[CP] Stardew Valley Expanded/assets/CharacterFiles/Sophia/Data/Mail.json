@@ -1,0 +1,9 @@
+{
+	"Changes": [
+	{
+		"Action": "EditData",
+		"Target": "Data/Mail",
+		"Entries": { "SophiaThankYouLetter": "Hey you,^^Thanks for helping me restore my parents' room. I couldn't have done it without you, especially with the heavy stuff! I know it's strange I packed everything up and moved it all back... I suppose it was a change of heart.^Enclosed is a bottle of my finest aged Blue Moon wine. Thanks, silly!^^  -Sophia %item object {{spacechase0.JsonAssets/ObjectId:Aged Blue Moon Wine}} 1 %%",
+		"GusSophia": "Hi @,^^Just wanted to drop you a quick line to ask you not to mention what I told you to Sophia. I trust you to be discreet. It's important we're on the same page. Looking forward to seeing you at the saloon soon.^^  -Gus" }
+	]
+}

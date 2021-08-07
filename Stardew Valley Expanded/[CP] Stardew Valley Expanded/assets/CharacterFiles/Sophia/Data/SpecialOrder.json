@@ -1,0 +1,132 @@
+{
+	"Changes": [
+	{ //Sophia's special order
+	  "Action": "EditData",
+	  "Target": "Data/SpecialOrders",
+	  "Entries": {
+	  "Sophia": {
+		"Name": "[Sophia_Name]",
+		"Requester": "Sophia",
+		"Duration": "Month",
+		"Repeatable": "False",
+		"RequiredTags": "island, !winter",
+		"OrderType": "",
+		"SpecialRule": "",
+		"Text": "[Sophia_Text]",
+		"ItemToRemoveOnEnd": null,
+		"MailToRemoveOnEnd": null,
+		"RandomizedElements": null,
+		"Objectives": [
+		  {
+			"Type": "Donate",
+			"Text": "[Sophia_Objective_1_Text]",
+			"RequiredCount": "50",
+			"Data": {
+			  "DropBox": "SophiaChest",
+			  "DropBoxGameLocation": "Custom_BlueMoonVineyard",
+			  "DropBoxIndicatorLocation": "20 30",
+			  "AcceptedContextTags": "item_fairy_seeds"
+			}
+		  },
+		  {
+			"Type": "Donate",
+			"Text": "[Sophia_Objective_2_Text]",
+			"RequiredCount": "10",
+			"Data": {
+			  "DropBox": "SophiaChest",
+			  "DropBoxGameLocation": "Custom_BlueMoonVineyard",
+			  "DropBoxIndicatorLocation": "20 30",
+			  "AcceptedContextTags": "item_fairy_stone"
+			}
+		  },
+		  {
+			"Type": "Donate",
+			"Text": "[Sophia_Objective_3_Text]",
+			"RequiredCount": "10",
+			"Data": {
+			  "DropBox": "SophiaChest",
+			  "DropBoxGameLocation": "Custom_BlueMoonVineyard",
+			  "DropBoxIndicatorLocation": "20 30",
+			  "AcceptedContextTags": "item_fairy_dust"
+			}
+		  },
+		],
+		"Rewards": [
+		  {
+			"Type": "Money",
+			"Data": {
+			  "Amount": "35000"
+			}
+		  },
+		  {
+			"Type": "Mail",
+			"Data": {
+			  "MailReceived": "SophiaFairyGarden"
+			}
+		  },
+		  {
+			"Type": "Friendship",
+			"Data": {}
+		  }
+		]
+	  },
+	 },
+	},
+
+	{   //Sophia's special order strings
+		"Action": "EditData",
+		"Target": "Strings/SpecialOrderStrings",
+		"Entries": {
+		   "Sophia_Name": "Fairy Garden",
+		   "Sophia_Text": "Ever since I was a little girl, I've wanted my own fairy rose garden. Can anyone help me?",
+		   "Sophia_Objective_1_Text": "Drop off fairy seeds at Sophia's chest.",
+		   "Sophia_Objective_2_Text": "Drop off fairy stone.",
+		   "Sophia_Objective_3_Text": "Drop off fairy dust.",
+		}
+	},
+
+	{   //Sophia's special order event - ID tagged for map patch
+		"Action": "EditData",
+		"Target": "Data/Events/Farmhouse",
+		"Entries": {
+		"5515272/n SophiaFairyGarden": "none/-500 -500/Sophia -20 -20 0/end"
+		}
+	},
+
+	{   //Sophia's special order event - part 1 - player is not married to Sophia
+		"Action": "EditData",
+		"Target": "Data/Events/Custom_BlueMoonVineyard",
+		"When": { "Relationship:Sophia |contains=Married": false },
+		"Entries": {
+		"5407918/e 5515272/n SophiaFairyGarden/w sunny/z winter/t 600 1800": "none/-500 -500/Sophia 16 24 0 Scarlett 15 24 0 Pierre 24 55 2 Caroline 25 55 2/pause 500/playMusic playful/pause 500/viewport 16 25 clamp true/pause 1750/jump Sophia/pause 1000/jump Sophia/pause 300/faceDirection Scarlett 1 true/pause 1200/faceDirection Sophia 3 true/pause 500/speak Sophia \"So, Scarlett! What do you think about my 'fairy garden'?$9\"/pause 500/speak Scarlett \"The flowers smell really nice. It's all super pretty!$0#$b#I think this spot will make for great cosplay pictures!$1\"/pause 400/speak Sophia \"You said it!$1\"/pause 500/globalFade/viewport -1000 -1000 true/pause 500/end dialogue Sophia \"Hey! Thank you so, so much for helping me build my garden. I'll pay you back somehow!$1\""
+		}
+	},
+
+	{   //Sophia's special order event - part 2 - player is not married to Sophia
+		"Action": "EditData",
+		"Target": "Data/Events/farm",
+		"When": { "HasSeenEvent": "5407918", "Relationship:Sophia |contains=Married": false },
+		"Entries": {
+		"5407919/e 5515272": "continue/-500 -500/Sophia -20 -20 0 farmer -20 -20 0/pause 1100/speak Sophia \"Hey, you. Um. I just wanted to say I'm really grateful for my fairy garden. I love it so much!$1#$b#To pay you back, I contracted with a new sprinkler supplier. You can purchase new devices from my ledger now.$9\"/pause 500/emote farmer 32/globalFade/viewport -1000 -1000/pause 1000/playSound reward/message \"I can now purchase iridium sprinklers and nozzles from Sophia's ledger in her cosplay room!\"/pause 1000/end dialogue Sophia \"The iridium sprinklers and nozzles are really expensive... but I'm selling them at cost.$0#$e#I know they'll help out with your farming work, silly.$1\""
+		}
+	},
+
+	{   //Sophia's special order event - part 1 - player married Sophia
+		"Action": "EditData",
+		"Target": "Data/Events/Farmhouse",
+		"When": { "Relationship:Sophia": "Married" },
+		"Entries": {
+		"5407918/e 5515272/n SophiaFairyGarden/w sunny/z winter/t 600 700": "none/-500 -500/Sophia -10 -10 0 farmer -10 -10 0/pause 2000/speak Sophia \"Good morning, silly!$9#$b#My fairy garden should be completed today! Drop by the vineyard sometime this afternoon if you want to see it.$1\"/pause 500/end dialogue Sophia \"Fairy garden! Yay!$9#$e#%Sophia can't contain her excitement.\""
+		}
+	},
+
+	{   //Sophia's special order event - part 2 - player married Sophia
+		"Action": "EditData",
+		"Target": "Data/Events/Custom_BlueMoonVineyard",
+		"When": { "Relationship:Sophia": "Married" },
+		"Entries": {
+		"5407919/e 5515272/e 5407918/z winter/t 1000 1800": "none/-500 -500/Sophia 15 24 0 farmer 16 24 0 Pierre 24 55 2 Caroline 25 55 2/pause 500/playMusic kindadumbautumn/pause 500/positionOffset Sophia 7 -7/viewport 16 25 clamp true/pause 1750/jump Sophia/pause 800/jump Sophia/pause 300/faceDirection farmer 3 true/pause 900/faceDirection Sophia 1 true/pause 500/speak Sophia \"I love it! Thank you, thank you, thank you!!!$9#$b#Come here, you!$4\"/pause 600/showFrame farmer 101 true/showFrame Sophia 28 true/playSound dwop/specificTemporarySprite heart 16 23/pause 2000/move farmer 0 0 3/showFrame Sophia 4 true/pause 500/speak Sophia \"I've dreamt about having a fairy garden ever since I was a little girl and first watched 'Pink Princess Crusaders'.$4#$b#You made my dream come true, for real!$9\"/pause 600/showFrame farmer 97 true/pause 1000/move farmer 0 0 3/pause 400/speak Sophia \"Um. I was going to keep this a secret, but I want to tell you now.$1#$b#There's some new devices you can purchase from my order ledger!$9#$b#They're really expensive though, and I won't make money from selling them...$2#$b#But I know you'll put them to good use!$4\"/pause 500/emote farmer 32/pause 600/speak Sophia \"Let's enjoy the garden for a little longer, silly...$4\"/pause 800/faceDirection Sophia 0 true/pause 750/faceDirection farmer 0 true/pause 500/positionOffset Sophia 1 0/pause 50/positionOffset Sophia 1 0/pause 50/positionOffset Sophia 1 0/pause 50/positionOffset Sophia 1 0/pause 50/positionOffset Sophia 1 0/pause 750/positionOffset Sophia 1 0/pause 50/positionOffset Sophia 1 0/pause 50/positionOffset Sophia 1 0/pause 50/positionOffset Sophia 1 0/pause 50/positionOffset Sophia 1 0/pause 50/pause 600/emote Sophia 20/globalFade/viewport -1000 -1000 true/pause 1000/playSound reward/message \"I can now purchase iridium sprinklers and nozzles from Sophia's order ledger!\"/pause 1000/end dialogue Sophia \"I need to invite Scarlett over soon. I just know she'll love the garden!$1#$e#It'll make for a great cosplay photoshoot spot, too!$4#$e#*hugs* I love you!$9\""
+		}
+	},
+	]
+}

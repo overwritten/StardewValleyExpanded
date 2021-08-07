@@ -1,0 +1,313 @@
+{
+	"Changes":[
+		{   
+			"LogName": "Sophia egg festival data",
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring13",
+			"TextOperations": [
+			  {    
+				"Operation": "Append",
+				"Target": ["Entries", "Set-Up_additionalCharacters"],
+				"Value": "Sophia 29 62 right",
+				"Delimiter": "/"
+			  },
+			  {
+				"Operation": "Append",
+				"Target": ["Entries", "MainEvent_additionalCharacters"],
+				"Value": "Sophia 25 67 right",
+				"Delimiter": "/"
+			  },
+			 ]
+		},
+		{    //Sophia wins the egg hunt if players have seen Sophia's introduction event - only year 1
+			 "Action": "EditData",
+			 "Target": "Data/Festivals/spring13",
+			 "When": { "HasSeenEvent": "8185290", "Year": "1" },
+			 "Entries": {
+			 "afterEggHunt": "pause 100/playSound whistle/waitForOtherPlayers endContest/pause 1000/globalFade/viewport -1000 -1000/playMusic event1/loadActors MainEvent/warp farmer1 27 69 /warp farmer2 26 67/warp farmer3 32 67/warp farmer4 28 71/faceDirection farmer1 0/faceDirection farmer2 1/faceDirection farmer3 3/faceDirection farmer4 0/pause 1000/viewport 27 67 true/pause 2000/speak Lewis \"Wow, look at all these eggs!$h#$b#Now if only I could get you kids to pick up litter this efficiently, we'd have the cleanest town this side of the Gem Sea! *chuckle*$h\"/pause 800/playMusic none/speak Lewis \"And now, the winner of this year's egg hunt...\"/playMusic none/pause 3000/cutscene eggHuntWinner/null/playMusic event1/pause 500/fork AbbyWin/move Lewis 0 1 2/speak Lewis \"Here's your prize! Enjoy.\"/awardFestivalPrize/null/move Lewis 0 -1 0/speak Lewis \"Well, that's it for this year's Egg Festival. Thanks for coming, everyone!\"/pause 600/viewport move 1 0 5000/pause 2000/globalFade/viewport -1000 -1000/waitForOtherPlayers festivalEnd/end",
+			 "AbbyWin": "pause 100/showFrame Sophia 39/jump Sophia/faceDirection Vincent 3/pause 800/speak Sophia \"!!!$9\"/pause 200/faceDirection Vincent 0/pause 200/speak Lewis \"Here's your prize, Sophia. Enjoy!$1\"/pause 200/showFrame Sophia 0/pause 200/faceDirection Sophia 1 true/move Sophia 3 0 0/pause 500/playSound coin/pause 600/move Sophia -3 0 3/pause 120/faceDirection Sophia 2 true/pause 150/faceDirection Sophia 1 true/pause 400/faceDirection Lewis 0/speak Lewis \"Well, that's it for this year's Egg Festival. Thanks for coming, everyone!\"/pause 1000/viewport move 1 -1 5000/pause 2000/globalFade/viewport -1000 -1000/waitForOtherPlayers festivalEnd/end",
+			 "mainEvent": "pause 500/playMusic none/pause 500/globalFade/viewport -1000 -1000/loadActors MainEvent/warp farmer1 27 69 /warp farmer2 27 67/warp farmer3 32 67/warp farmer4 28 71/faceDirection farmer1 0/faceDirection farmer2 1/faceDirection farmer3 3/faceDirection farmer4 0/pause 1000/viewport 27 67 true unfreeze/pause 2000/speak Lewis \"It's time for the highlight of today's festivities... The Annual Spring Egg Hunt!$h\"/pause 100/jump Jas/pause 100/jump Vincent/pause 250/pause 1200/speak Lewis \"Calm down now, kiddos. You're going to need all your energy if you hope to find the most eggs and take home the exclusive prize.\"/pause 100/faceDirection Vincent 3 true/faceDirection Jas 1 true/pause 1000/faceDirection Vincent 0 true/faceDirection Jas 0 /pause 800/faceDirection Lewis 3/faceDirection Lewis 2/faceDirection Lewis 1/faceDirection Lewis 2/pause 800/speak Lewis \"Now... Is everyone ready?\"/pause 1000/waitForOtherPlayers startContest/jump Lewis/pause 1000/speak Lewis \"Let the egg hunt begin!$h\"/advancedMove Sophia false 0 -13 -12 0 0 20 16 0 0 16 -18 0 0 4 4 0 0 -12 8 0 4 5000/advancedMove Maru false -2 0 0 6 -9 0 0 -2 -9 0 0 -1 2 0 0 -12 6 0 0 -4 15 0 0 1 3 0 0 1 5 0 0 2 12 0 0 11/advancedMove Abigail false 0 21 -20 0 0 3 7 0 0 -2 26 0 0 5 25 0/advancedMove Jas false 0 12 8 0 0 10 3 0 0 4 14 0 0 -20 -7 0 0 6 -14 0/advancedMove Sam false 4 0 0 -4 2 0 0 -4 12 0 0 -6 19 0 0 20 0 -20 0 20/advancedMove Vincent false 0 3 24 0 0 22 15 0 0 -21 -25 0 4 7000/playSound whistle/playMusic tickTock/playerControl eggHunt",
+			 }
+		},
+
+		{    //Edits Lewis' CS string to Sophia
+			 "Action": "EditData",
+			 "Target": "Strings/StringsFromCSFiles",
+			 "When": { "HasSeenEvent": "8185290", "Year": "1" },
+			 "Entries": { "Event.cs.1862": "Sophia!" }
+		},
+		{
+			"LogName": "Sophia's flower festival data",
+			"Action": "EditData",
+			"Target": "Data/Festivals/spring24",
+			"TextOperations": [
+				{    
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "Sophia 9 38 up",
+					"Delimiter": "/"
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "MainEvent_additionalCharacters"],
+					"Value": "Sophia 21 20 down",
+					"Delimiter": "/"
+				},
+			]
+		},
+		
+		{
+			"LogName": "Sophia luau festival data"
+			"Action": "EditData",
+			"Target": "Data/Festivals/summer11",
+			"TextOperations": [
+			{    
+				"Operation": "Append",
+				"Target": ["Entries", "Set-Up_additionalCharacters"],
+				"Value": "Sophia 50 24 down",
+				"Delimiter": "/"
+			},
+			{
+				"Operation": "Append",
+				"Target": ["Entries", "MainEvent_additionalCharacters"],
+				"Value": "Sophia 27 10 right",
+				"Delimiter": "/"
+			},
+			]
+		},
+		{   //Sophia moonlit jellies festival data
+			"Action": "EditData",
+			"Target": "Data/Festivals/summer28",
+			"TextOperations": [
+			{    
+				"Operation": "Append",
+				"Target": ["Entries", "Set-Up_additionalCharacters"],
+				"Value": "Sophia 50 24 down",
+				"Delimiter": "/"
+			}
+			]
+		},
+		{
+			"LogName":"Sophia Fair Festival Data",
+			"Action":"EditData",
+			"Target":"Data/Festivals/fall16",
+			"TextOperations": [
+			  {    
+				"Operation": "Append",
+				"Target": ["Entries", "Set-Up_additionalCharacters"],
+				"Value": "Sophia 47 60 down",
+				"Delimiter": "/"
+			  }
+			]
+		},
+		{
+			"LogName": "Sophia Judge Strings",
+			"Action": "EditData",
+			"Target": "Strings/StringsFromCSFiles",
+			"Entries": {
+				"SVE_GrangeJudging_Sophia": "I wonder who'll win?$1",
+				"SVE_AfterJudging_Sophia": "That was fun!$1",
+			}
+		},
+		
+		{    
+			"LogName": "Sophia Marriage Judge Strings",
+			 "Action": "EditData",
+			 "Target": "Strings/StringsFromCSFiles",
+			 "When": { "Spouse |contains=Sophia": true },
+			 "Entries": {
+				 "SVE_GrangeJudging_Sophia": "We're competitors until the judging is over, dear...$3#$e#%Sophia looks pumped.",
+				 "SVE_AfterJudging_Sophia": "Yay! I won so many Star Tokens!$8#$e#Don't forget to clear out your grange display, okay.$1#$e#I almost forgot one year...$2",
+			 }
+		},
+		{   
+			"LogName": "Sophia Fair Festival Data",
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall16",
+			"TextOperations": [
+			  {    
+				"Operation": "Append",
+				"Target": ["Entries", "Set-Up_additionalCharacters"],
+				"Value": "Sophia 47 60 down",
+				"Delimiter": "/"
+			  }
+			]
+		},
+		{   
+			"LogName": "Sophia Halloween Festival Data",
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall27",
+			"When": { "IsOddYear": true },
+			"TextOperations": [
+			  {    
+				"Operation": "Append",
+				"Target": ["Entries", "Set-Up_additionalCharacters"],
+				"Value": "Sophia 25 68 down",
+				"Delimiter": "/"
+			  }
+			]
+		},
+		{   
+			"LogName": "Sophia Halloween Festival Data Y2",
+			"Action": "EditData",
+			"Target": "Data/Festivals/fall27",
+			"When": { "IsOddYear": false },
+			"TextOperations": [
+			  {    
+				"Operation": "Append",
+				"Target": ["Entries", "Set-Up_additionalCharacters"],
+				"Value": "Sophia 27 20 down",
+				"Delimiter": "/"
+			  }
+			]
+		},
+		{   
+			"LogName": "Sophia ice festival data",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter8",
+			"TextOperations": [
+			  {    
+				"Operation": "Append",
+				"Target": ["Entries", "Set-Up_additionalCharacters"],
+				"Value": "Sophia 58 39 up",
+				"Delimiter": "/"
+			  },
+			  {
+				"Operation": "Append",
+				"Target": ["Entries", "Main-Event_additionalCharacters"],
+				"Value": "Sophia 63 36 right",
+				"Delimiter": "/"
+			  },
+			]
+		},
+		{   
+			"LogName": "Sophia christmas festival data",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter25",
+			"TextOperations": [
+			  {    
+				"Operation": "Append",
+				"Target": ["Entries", "Set-Up_additionalCharacters"],
+				"Value": "Sophia 53 69 up",
+				"Delimiter": "/"
+			  },
+			]
+		},
+		{ 
+			"Action": "EditData",
+			"Target": "data/festivals/spring13",
+			"Entries": { "Sophia": "I get nervous around large crowds of people...$2" }
+		},
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/spring13",
+			"Entries": { "Sophia": "Hey, you! Want to get some food with me?$4#$e#I already had a plate. This will be my second.$9" },
+			"When": { "Spouse": "Sophia" }
+		},
+
+			//FLOWER DANCE
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": { "Sophia": "I'm here for the free cake.$1" }
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/spring24",
+			"Entries": { "Sophia": "Hey, you!$9#$b#Want to eat lots and lots of food with me?$1" },
+			"When": { "Spouse": "Sophia" }
+		},
+
+			//LUAU
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/summer11",
+			"Entries": { "Sophia": "I added aged Blue Moon Wine for the adult pot!$9#$e#I hope the other ingredients people put in are tasty!$1" }
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/summer11",
+			"Entries": { "Sophia": "Want to go swimming after we eat?$1#$e#I have a new bikini.$4" },
+			"When": { "Spouse": "Sophia" }
+		},
+
+			//DANCE OF THE MOONLIGHT JELLIES
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/summer28",
+			"Entries": { "Sophia": "The jellyfish are so pretty!$1#$b#I love watching them every year.$9", }
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/summer28",
+			"Entries": { "Sophia": "Hey, you. See the faint glow out there?$4#$e#The moonlight jellyfish are coming to the shore!$9#$e#%You hold Sophia's hand. She smiles at you." },
+			"When": { "Spouse": "Sophia" }
+		},
+
+			//STARDEW VALLEY FAIR
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": { "Sophia": "I'm presenting my best aged wine from Blue Moon Vineyard!$1#$e#I worked hard to make these!$9#$e#Oh. Um. So what's in your grange display?$1", }
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/fall16",
+			"Entries": { "Sophia": "We are competing against each other today.$1#$b#May the best one win!$3#$e#Oh. Um. I love you!$4#$b#Good luck!$9" },
+			"When": { "Spouse": "Sophia" }
+		},
+
+			//SPIRITS EVE FESTIVAL
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": { "Sophia": "I went into the maze and gave up.$2#$e#Why? Oh. I was hungry.$1#$e#Have you tried Pierre's spiced pumpkin cider?$9", }
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"Entries": { "Sophia": "Hey, you. Getting food too?$1#$e#Hey! Um. Those monsters in the cages. Have you fought those before?$0#$e#You're so brave, my hero.$4" },
+			"When": { "Spouse": "Sophia" }
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/fall27",
+			"When": { "IsOddYear": false },
+			"Entries": { "Sophia": "It's so dark... I can't see.$2", }
+		},
+
+			//ICE FISHING FESTIVAL
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/winter8",
+			"Entries": { "Sophia": "Mmm. So pretty here.$9#$e#There's no food, but that's okay. I brought snacks.$1" }
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/winter8",
+			"Entries": { "Sophia": "I want to build a snowman!$9#$b#Come on! Let's make one, silly.$1#$e#Aww. Okay. After the fishing contest then!$1" },
+			"When": { "Spouse": "Sophia" }
+		},
+
+			//WINTER STAR FESTIVAL
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": { "Sophia": "Who's a good boy!? You are!$9#$e#Did you get a present yet?$1" }
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "data/festivals/winter25",
+			"Entries": { "Sophia": "Hey, you! I thought I'd pet Dusty for a little bit.$1#$b#He's Pelican Town's best boy!$9#$e#Oh. Um. I'll join you at a table soon. Save me a seat?$1" },
+			"When": { "Spouse": "Sophia" }
+		},
+		]
+}

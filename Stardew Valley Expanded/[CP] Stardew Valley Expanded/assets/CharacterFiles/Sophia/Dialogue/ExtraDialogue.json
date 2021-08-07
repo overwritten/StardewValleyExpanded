@@ -1,0 +1,12 @@
+{
+    "Changes": [
+		{
+		"LogName": "Sophia Extra Dialogue",
+		"Action": "EditData",
+		"Target": "Data/ExtraDialogue",
+		"Entries": {
+			"SummitEvent_Dialogue3_Sophia": "Hey, silly...$1\"/pause 500/faceDirection farmer 1/pause 350/speak Sophia \"Thank you for always filling my days with joy and comforting me when I'm down.$1#$b#It's nice knowing there will always be someone there for me.$9\"/pause 500/faceDirection Sophia 3/pause 300/speak Sophia \"I love living this happy farmer's life with you.$4"
+			}
+		},
+	]
+}

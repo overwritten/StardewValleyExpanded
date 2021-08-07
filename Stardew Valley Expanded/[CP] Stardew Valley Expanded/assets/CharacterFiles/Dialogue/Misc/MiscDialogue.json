@@ -1,0 +1,42 @@
+{
+	"Changes":[
+		// SUMMIT DIALOGUE
+		{
+			"LogName":"Summit SVE spouse dialogue additions",
+			"Action":"EditData",
+			"Target":"Data/ExtraDialogue",
+			"Entries":{
+				"SummitEvent_Dialogue3_Sophia": "Hey, silly...$1\"/pause 500/faceDirection farmer 1/pause 350/speak Sophia \"Thank you for always filling my days with joy and comforting me when I'm down.$1#$b#It's nice knowing there will always be someone there for me.$9\"/pause 500/faceDirection Sophia 3/pause 300/speak Sophia \"I love living this happy farmer's life with you.$4",
+				"SummitEvent_Dialogue3_Victor": "I remember the last time we were up here. We've both grown so much since then. Crazy how time flies.$1#$b#There's nowhere else I'd rather be than here with you, in this moment.$3\"/pause 500/faceDirection Victor 3/pause 300/faceDirection farmer 1/pause 150/speak Victor \"Thank you for coming into my life, and making every day an adventure.$1", 
+				"SummitEvent_Dialogue3_Olivia": "I don't have a single regret about choosing to spend the rest of my life with you, all those years ago.$3\"/pause 500/faceDirection Olivia 3/pause 500/faceDirection farmer 1/pause 300/speak Olivia \"I wish I could show you how I see you through my eyes.$3#$b#If only so you could feel how much you mean to me, and how much I love you.$4", 
+				"SummitEvent_Dialogue3_Claire": "Taking the job offer at Joja Mart was the best decision I ever made.$1#$b#Goes to show, you never know what the future holds. Or how one choice can change your whole life...$5\"/pause 500/faceDirection Claire 3/pause 500/faceDirection farmer 1/pause 300/speak Claire \"My heart is and always will be yours...$4",
+				"SummitEvent_Dialogue3_Wizard": "You know, after the way things with my ex wife concluded, and... and Caroline, too...I truly wasn't sure I'd ever find someone to spend my life with.#$b#I thought I might be destined to be alone with my spells, in my tower in the woods.$2#$b#And then you moved into the valley, and it didn't matter that I hid myself away...$0#$b#You came through the woods to knock on my door and find me, again and again. You brought hope into my life when I thought it had died a long while ago.$5\"/pause 500/faceDirection Wizard 3/pause 500/faceDirection farmer 1/pause 300/speak Wizard \"Thank you for trusting me. For believing in me, and giving me a chance at living again.$1#$b#You've given me the gift of joy, @. I can only do my best to return it...and so I shall, for the rest of our lives together.$4",
+			}
+		},
+		{
+			"LogName": "Summit morris mayor dialogue",
+			"Action": "EditData",
+			"Target": "Data/ExtraDialogue",
+			"When": { "HasSeenEvent": "6665293" },
+			"Entries": { 
+				"SummitEvent_Intro_Morris": "Ah, @!$1#$e#Come to take a gander at this spectacular view have we?",
+				"SummitEvent_Dialogue1_Morris": "You know, when I was first assigned to this location over %year years ago, I considered it a step back in my career.$0#$b#What self-respecting Joja Manager would want to preside over a tiny, backwater location like Pelican Town?$1",
+				"SummitEvent_Dialogue2_Morris": "But I have to say, this valley has really grown on me, over the years.$2#$b#Ever since becoming Mayor, my eyes opened to a different way of life. It's hard to say this, but... It's been... a humbling experience.$0",
+				"SummitEvent_Outro_Morris": "Together, we brought much needed change to the valley. Cheers the bright future that awaits us, @!$1",
+			}
+		},
+		// MOVIE THEATER
+		{   
+			"LogName": "Adds spouse strings for the movie theater",
+			"Action": "EditData",
+			"Target": "Strings/Characters",
+			"Entries": { 
+				"MovieInvite_Spouse_Victor": "Ah, of course! I'd love to see a movie with you!$3#$e#Shall we walk to the movie theater together?$1",
+				"MovieInvite_Spouse_Olivia": "Oh, you want to see a film at the cinema? It'll be a lovely date night.$3",
+				"MovieInvite_Spouse_Sophia": "Oooh! A movie? Yay!$9#$b#I'll meet you there okay?$1#$e#I'm going to get cotton candy!$1",
+				"MovieInvite_Spouse_Claire": "You want to see a film with me? Sure!$1",
+				"MovieInvite_Spouse_Wizard": "You wish to watch a movie at the theater? I'd be delighted.$0",
+			}
+		},
+	]
+}
